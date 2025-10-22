@@ -98,7 +98,7 @@
 
     <!-- Slider panel (separate) -->
     <section class="panel" style="margin-top:16px;">
-      <label style="font-size:14px;font-weight:600;">Try it: How would be your risk of homicide change if you had been born in a more safe or more violent state? </label>
+      <label style="font-size:14px;font-weight:600;">Try it: How does the homicide risk where you live change for people from safer or more violent states? </label>
       <input id="origin-slider" type="range" min="0" max="100" value="0" />
       <div class="slider-labels"><span>Safest</span><span>Most violent</span></div>
       <div id="slider-out" class="slider-output">Choose a residence and move the slider to see the effect.</div>
@@ -248,7 +248,7 @@ originSlider.addEventListener('input', () => {
   const predicted = baseline * (k * Math.pow(h/G, beta));
   const pct = pctDelta(baseline, predicted);
   const moreLess = pct >= 0 ? 'higher' : 'lower';
-  sliderOut.textContent = 'If your birth state was this violent, then the risk of homicide in your state of residence would be ' + fmt(predicted) + ' per 100,000; ' + pct.toFixed(1) + '% ' + moreLess + ' than locals. (The overall risk of homicide varies from ' + fmt(low) + ' to ' + fmt(high) + ' depending on how safe or violent your birth state is.).';
+  sliderOut.textContent = 'For people born in a state this violent, the risk of homicide where you live would be ' + fmt(predicted) + ' per 100,000; ' + pct.toFixed(1) + '% ' + moreLess + ' than locals. (Overall homicide risk ranges from ' + fmt(low) + ' to ' + fmt(high) + ' depending on how violent the birth state is.).';
 });
 
 selectRes.addEventListener('change', update);
